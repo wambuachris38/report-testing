@@ -1,0 +1,38 @@
+# Test Report – Functional Testing Lab (Note-Taking App)
+
+## 🧩 1. Unit Test
+**Function Tested:** `saveNote()`  
+**What It Checked:** Whether the app prevents saving a note when the title or content is empty.  
+**Result:** The test failed — notes can still be saved with empty fields.  
+**Bug Found:** [Issue 001 – Notes not saved when title field is left blank](https://github.com/wambuachris38/noteapp/issues/1)
+
+---
+
+## 🔗 2. Integration & System Tests
+**Steps Tested:**
+- Typing a note and clicking “Save Note”  
+- Editing an existing note  
+- Deleting a note  
+
+**What Worked Well:**
+- Notes appeared immediately after saving.  
+- UI was simple to use.  
+
+**What Didn’t Work:**
+- Edited notes didn’t refresh on screen.  
+- Deleting sometimes removed the wrong note.  
+
+**Bugs Found:**
+- [Issue 002 – Edited note not updating in display list](https://github.com/wambuachris38/noteapp/issues/2)  
+- [Issue 003 – Delete button sometimes deletes wrong note](https://github.com/wambuachris38/noteapp/issues/3)
+
+---
+
+## 💭 3. Reflection
+Testing the Note-Taking App helped me understand how **Unit**, **Integration**, and **System** testing differ:
+- Unit tests check a single function’s logic.
+- Integration tests confirm connected components work together.
+- System tests simulate the user’s full experience.
+
+The most confusing part was testing DOM updates with Jest, but reading the code and adding `document.body.innerHTML` setup helped me figure it out.  
+I learned how to test front-end logic, simulate user interactions, and document bugs clearly using GitHub Issues.
