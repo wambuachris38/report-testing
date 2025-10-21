@@ -1,0 +1,36 @@
+# Testing Report Summary
+
+## 🧱 Project: Task Manager CLI
+**Goal:** Practice writing and running unit tests using Jest for basic task management logic.
+
+---
+
+## ✅ What I Tested
+1. **addTask()** — verified that multiple tasks can be added successfully.
+2. **deleteTask()** — checked the system’s behavior when deleting the same task twice.
+3. **getAllTasks()** — confirmed it returns an empty list when no tasks exist.
+4. **getCompletedTasks()** — ensured only completed tasks are listed.
+
+---
+
+## 🐞 Observed Issues
+- [Issue 001 – Deleting a task twice throws error](https://github.com/wambuachris38/taskmanager/issues/1)
+- [Issue 002 – getCompletedTasks returns incorrect data](https://github.com/wambuachris38/taskmanager/issues/2)
+
+---
+
+## 🧪 Example Test Cases Written
+```javascript
+test('should add multiple tasks correctly', () => {
+  const taskManager = new TaskManager();
+  taskManager.addTask('Buy milk');
+  taskManager.addTask('Read book');
+  expect(taskManager.getAllTasks().length).toBe(2);
+});
+
+test('should handle deleting a task twice gracefully', () => {
+  const taskManager = new TaskManager();
+  taskManager.addTask('Buy milk');
+  taskManager.deleteTask(1);
+  expect(() => taskManager.deleteTask(1)).toThrow();
+});
